@@ -1,5 +1,5 @@
 (def project 'simple-yada-template/boot-template)
-(def version "0.1.0")
+(def version "0.1.1")
 
 (set-env! :resource-paths #{"resources" "src"}
           :dependencies   '[[org.clojure/clojure "RELEASE"]
