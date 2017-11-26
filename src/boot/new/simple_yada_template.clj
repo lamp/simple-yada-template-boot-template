@@ -7,8 +7,7 @@
   "FIXME: write documentation"
   [name]
   (let [data {:name name
-              :sanitized (name-to-path name)
-	      :nested-dirs   (name-to-path main-ns)}]
+              :sanitized (name-to-path name)}]
     (println "Generating fresh 'boot new' simple-yada-template project.")
     (->files data
              ["src/{{sanitized}}/core.clj" (render "core" data)]

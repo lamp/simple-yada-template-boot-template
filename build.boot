@@ -4,7 +4,6 @@
 (set-env! :resource-paths #{"resources" "src"}
           :dependencies   '[[org.clojure/clojure "RELEASE"]
                             [boot/new "RELEASE"]
-			    [adzerk/bootlaces "0.1.13"]
                             [adzerk/boot-test "RELEASE" :scope "test"]]
           :repositories   (conj (get-env :repositories)
                                 ["clojars" {:url "https://clojars.org/repo"
@@ -28,8 +27,7 @@
   (comp (pom) (jar) (install)))
 
 (require '[adzerk.boot-test :refer [test]]
-         '[boot.new :refer [new]]
-         '[adzerk.bootlaces :refer :all])
+         '[boot.new :refer [new]])
 
 (deftask deploy []
   (comp
