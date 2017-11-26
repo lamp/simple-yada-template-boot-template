@@ -10,7 +10,7 @@
               :sanitized (name-to-path name)}]
     (println "Generating fresh 'boot new' simple-yada-template project.")
     (->files data
-             ["src/{{sanitized}}/core.clj" (render "core" data)]
+             ["src/{{sanitized}}/core.clj" (render "core.clj" data)]
 	     ["build.boot" (render "build.boot" data)]
              [".gitignore" (render "gitignore" data)]
              ["config.edn" (render "config.edn" data)])))
