@@ -14,7 +14,7 @@
 
 (require '[aero.core :refer (read-config)])
 
-(require '[addressable.core])
+(require '[{{name}}.core])
 
 (def config
   (read-config "config.edn"))
