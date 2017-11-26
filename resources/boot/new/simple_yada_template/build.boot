@@ -30,8 +30,7 @@
 (defn start []
  (comp
    (speak)
-   (dev)
-   ))
+   (dev)))
 
 (deftask run
   []

@@ -7,10 +7,12 @@
   "FIXME: write documentation"
   [name]
   (let [data {:name name
-              :sanitized (name-to-path name)}]
+              :sanitised (name-to-path name)}]
     (println "Generating fresh 'boot new' simple-yada-template project.")
     (->files data
-             ["src/{{sanitized}}/core.clj" (render "core.clj" data)]
+             ["src/{{sanitised}}/core.clj" (render "core.clj" data)]
 	     ["build.boot" (render "build.boot" data)]
              [".gitignore" (render "gitignore" data)]
-             ["config.edn" (render "config.edn" data)])))
+             ["config.edn" (render "config.edn" data)]
+             "resources")
+    ()))
