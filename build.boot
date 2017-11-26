@@ -1,16 +1,17 @@
 (def project 'simple-yada-template/boot-template)
-(def version "0.1.0-SNAPSHOT")
+(def version "0.1.0")
 
 (set-env! :resource-paths #{"resources" "src"}
           :dependencies   '[[org.clojure/clojure "RELEASE"]
                             [boot/new "RELEASE"]
+			    [adzerk/bootlaces "0.1.13"]
                             [adzerk/boot-test "RELEASE" :scope "test"]])
 
 (task-options!
  pom {:project     project
       :version     version
       :description "Simple Yada Boot Template"
-      :url         "https://github.com/lamp/simple-yada-template-boot-template<Paste>"
+      :url         "https://github.com/lamp/simple-yada-template-boot-template"
       :scm         {:url "https://github.com/lamp/simple-yada-template-boot-template"}
       :license     {"Eclipse Public License"
                     "http://www.eclipse.org/legal/epl-v10.html"}})
@@ -21,4 +22,7 @@
   (comp (pom) (jar) (install)))
 
 (require '[adzerk.boot-test :refer [test]]
-         '[boot.new :refer [new]])
+         '[boot.new :refer [new]]
+         '[adzerk.bootlaces :refer :all])
+
+(bootlaces! version)
