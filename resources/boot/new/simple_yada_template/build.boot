@@ -19,7 +19,7 @@
 (def config
   (read-config "config.edn"))
 
-(task-options! 
+(task-options!
   repl {:client true :port 5600})
 
 (defn dev []
